@@ -2,7 +2,7 @@ import std/[os, json]
 
 const currentDir = currentSourcePath().splitFile.dir
 
-{.link: currentDir / "../../../foundry_compilers_nim/foundry_nim_compiler_bridge/target/release/libfoundry_nim_compiler_bridge.a".}
+{.link: currentDir / "../foundry_nim_compiler_bridge/target/release/libfoundry_nim_compiler_bridge.a".}
 
 when defined(macosx):
   {.passL: "-lresolv -lc -framework CoreFoundation -framework Security".}
@@ -18,5 +18,10 @@ proc compileSolidity*(projectPath: string): JsonNode =
     return newJObject()
   try:
     result = parseJson($rawResult)
+    if result.hasKey("compiler_errors"):
+      echo "Solidity compilation failed:"
+      for err in result["compiler_errors"]:
+          echo "  ", err.getStr()
+      quit(1) 
   finally:
     free_rust_string(rawResult)

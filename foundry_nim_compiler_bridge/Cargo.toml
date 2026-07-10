@@ -1,0 +1,11 @@
+[package]
+name = "foundry_nim_compiler_bridge"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+foundry-compilers = { version = "0.21.0", features = ["full"] }
+serde_json = "1.0"

@@ -12,3 +12,6 @@ task buildRust, "Build the Rust FFI bridge":
 
 before build:
   buildRustTask()
+
+before test:
+  buildRustTask()
