@@ -1,2 +1,9 @@
 foundry_nim_compiler_bridge/target
 foundry_compilers_nim
+
+tests/test_files/cache/
+tests/test_files/out/
+
+tests/test_files/docs/
+tests/test_files.env
+tests/example
