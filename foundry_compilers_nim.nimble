@@ -1,4 +1,4 @@
-version       = "0.1.7"
+version       = "0.1.8"
 author        = "Ryan Laidlaw"
 description   = "A Nim wrapper around the Rust foundry-compilers crate"
 license       = "MIT"
