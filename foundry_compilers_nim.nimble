@@ -4,7 +4,7 @@ description   = "A Nim wrapper around the Rust foundry-compilers crate"
 license       = "MIT"
 srcDir        = "src"
 
-requires "nim >= 2.0.0"
+requires "nim >= 2.2.10"
 
 installDirs = @["foundry_nim_compiler_bridge"]
 
