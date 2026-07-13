@@ -2,7 +2,7 @@ import std/[os, json]
 
 const currentDir = currentSourcePath().splitFile.dir
 
-{.link: currentDir / "../foundry_nim_compiler_bridge/target/release/libfoundry_nim_compiler_bridge.a".}
+{.link: currentDir / "foundry_nim_compiler_bridge/target/release/libfoundry_nim_compiler_bridge.a".}
 
 when defined(macosx):
   {.passL: "-lresolv -lc -framework CoreFoundation -framework Security".}
